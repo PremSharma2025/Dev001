@@ -13,6 +13,89 @@
     "sourceQueryCulture": "en-US",
     "tables": [
       {
+        "name": "Emp",
+        "sourceLineageTag": "[dbo].[Emp]",
+        "columns": [
+          {
+            "name": "Eid",
+            "dataType": "int64",
+            "sourceColumn": "Eid",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "Eid",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "employee_name",
+            "dataType": "string",
+            "sourceColumn": "employee_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "employee_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "sal",
+            "dataType": "int64",
+            "sourceColumn": "sal",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "sal",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Dept_Id",
+            "dataType": "int64",
+            "sourceColumn": "Dept_Id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "Dept_Id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Emp",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "Test",
         "sourceLineageTag": "[dbo].[Test]",
         "columns": [
